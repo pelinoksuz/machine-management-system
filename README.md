@@ -1,25 +1,27 @@
 # Machine Management System API
 
-.NET 8 Minimal API + MSSQL (EF Core) başlangıç projesi.
+.NET 8 Minimal API + MSSQL (EF Core) starter project.
 
-## Klasör Yapısı
+## Folder Structure
 
-- `src/MachineManagement.Api/Program.cs`: sadece bootstrap ve DI
-- `src/MachineManagement.Api/Endpoints/*`: endpoint grupları
+- `src/MachineManagement.Api/Program.cs`: Bootstrap and DI only
+- `src/MachineManagement.Api/Endpoints/*`: Endpoint groups
 - `src/MachineManagement.Api/Data/*`: EF Core `DbContext`
-- `src/MachineManagement.Api/Domain/*`: entity sınıfları
-- `src/MachineManagement.Api/Contracts/*`: request/response sözleşmeleri
 
-## MSSQL bağlantısı
+- `src/MachineManagement.Api/Domain/*`: Entity classes
 
-Connection string `src/MachineManagement.Api/appsettings.json` içinde:
+- `src/MachineManagement.Api/Contracts/*`: Request/response contracts
+
+## MSSQL Connection
+
+Connection string in `src/MachineManagement.Api/appsettings.json`:
 
 - `ConnectionStrings:MachineManagementDb`
 
-## Çalıştırma
+## Execution
 
 ```bash
-dotnet restore src/MachineManagement.Api/MachineManagement.Api.csproj
+dotnet restore` src/MachineManagement.Api/MachineManagement.Api.csproj
 dotnet ef migrations add InitialCreate --project src/MachineManagement.Api
 dotnet ef database update --project src/MachineManagement.Api
 dotnet run --project src/MachineManagement.Api/MachineManagement.Api.csproj
